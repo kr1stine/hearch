@@ -1,6 +1,8 @@
-import React, { useEffect, useState, Fragment } from "react";
-import { mockProduct } from "../mock-data";
+import React, { useEffect } from "react";
+import Grid from "@material-ui/core/Grid";
+
 import VideoList from "./VideoList";
+import ProductDescription from "./ProductDescription";
 
 const Product = ({ product }) => {
   useEffect(() => {
@@ -31,10 +33,14 @@ const Product = ({ product }) => {
   } */
 
   return (
-    <Fragment>
-      {product.brand} {product.name}
-      <VideoList videos={product.videos}></VideoList>
-    </Fragment>
+    <Grid container direction="row" justify="center" alignItems="center">
+      <Grid item xs={3}>
+        <ProductDescription product={product}></ProductDescription>
+      </Grid>
+      <Grid item xs={9}>
+        <VideoList videos={product.videos}></VideoList>
+      </Grid>
+    </Grid>
   );
 };
 

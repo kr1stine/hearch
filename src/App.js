@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import logo from "assets/logo_transparent.png";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { getSubtitles } from "youtube-captions-scraper";
