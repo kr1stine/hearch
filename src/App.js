@@ -3,7 +3,8 @@ import axios from "axios";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { getSubtitles } from "youtube-captions-scraper";
-import VideoList from "./components/VideoList";
+import Product from "./components/Product";
+import { mockProduct } from "./mock-data";
 
 function App() {
   const [captions, setCaptions] = useState([]);
@@ -22,7 +23,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <VideoList></VideoList>
+        <Product product={mockProduct}></Product>
       </header>
     </div>
   );

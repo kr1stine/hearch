@@ -1,7 +1,38 @@
+export const mockProduct = {
+  id: 1,
+  brand: "Rare Beauty",
+  name: "Always an optimist illuminating primer",
+  product_type: "primer",
+  amazon_link:
+    "https://www.amazon.com/Rare-Beauty-Always-Optimist-Illuminating/dp/B08KFLC42S",
+  amazon_photo: "",
+  videos: [
+    {
+      id: "B6edjW4ewYo",
+      start: 160,
+    },
+    {
+      id: "nfig7v75XkY",
+      start: 145,
+    },
+    {
+      id: "xi6KyrpTKxU",
+      start: 590,
+    },
+  ],
+};
 export const mockVideos = [
   {
     id: "B6edjW4ewYo",
     start: 160,
+  },
+  {
+    id: "nfig7v75XkY",
+    start: 145,
+  },
+  {
+    id: "xi6KyrpTKxU",
+    start: 590,
   },
 ];
 /* req.get('/captions', {
