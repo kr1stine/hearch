@@ -1,12 +1,15 @@
-import logo from "assets/logo_size_invert.jpg";
-import "./App.css";
 import { useEffect, useState } from "react";
 import { getSubtitles } from "youtube-captions-scraper";
-import Product from "./components/Product";
-import { mockProduct } from "./mock-data";
+
 import Box from "@material-ui/core/Box";
+import Product from "./components/Product";
 import NavigationBar from "components/NavigationBar";
+import HeaderSection from "components/HeaderSection";
+
+import { mockProduct } from "./mock-data";
+
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import "./App.css";
 
 function App() {
   const [captions, setCaptions] = useState([]);
@@ -26,6 +29,7 @@ function App() {
       <Box>
         <NavigationBar></NavigationBar>
         <div className="App">
+          <HeaderSection></HeaderSection>
           <Product product={mockProduct}></Product>
         </div>
       </Box>
@@ -38,15 +42,15 @@ export default App;
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: "#f8bef9",
-      main: "#F7AEF8",
-      dark: "#ac79ad",
+      light: "#eecfdd",
+      main: "#EAC4D5",
+      dark: "#a38995",
       contrastText: "#000",
     },
     secondary: {
-      light: "#99a8f3",
-      main: "#8093F1",
-      dark: "#5966a8",
+      light: "#c6e6db",
+      main: "#B8E0D2",
+      dark: "#809c93",
       contrastText: "#000",
     },
   },
