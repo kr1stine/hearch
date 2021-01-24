@@ -33,7 +33,13 @@ const Product = ({ product }) => {
   } */
 
   return (
-    <Grid container direction="row" justify="center" alignItems="center">
+    <Grid
+      container
+      direction="row"
+      justify="center"
+      alignItems="center"
+      spacing={2}
+    >
       <Grid item xs={4}>
         <ProductDescription product={product}></ProductDescription>
       </Grid>

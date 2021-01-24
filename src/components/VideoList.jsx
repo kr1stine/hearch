@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     justifyContent: "space-between",
     overflow: "hidden",
-    backgroundColor: "#282c34",
+    backgroundColor: "#f4f4ed",
   },
   gridList: {
     flexWrap: "nowrap",
