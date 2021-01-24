@@ -1,34 +1,57 @@
 import React, { Fragment } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
 
 const ProductDescription = ({ product }) => {
-  const classes = useStyles();
+  const props = { productImage: `${product.amazon_img}` };
+  const classes = useStyles(props);
   const fullName = `${product.brand} ${product.name}`;
 
   return (
-    <Fragment>
-      <img
-        src={product.amazon_img}
-        alt={fullName}
-        className={classes.image}
-      ></img>
-      <div className={classes.descrpition}>{fullName}</div>
-    </Fragment>
+    <div className={classes.root}>
+      <div className={classes.descrpition}>
+        <Typography
+          variant="overline"
+          display="block"
+          gutterBottom
+          className={classes.brandName}
+        >
+          {product.brand}
+        </Typography>
+        <Typography
+          variant="body1"
+          gutterBottom
+          className={classes.productName}
+        >
+          {product.name}
+        </Typography>
+      </div>
+    </div>
   );
 };
 
 const useStyles = makeStyles((theme) => ({
+  image: {
+    maxWidth: "100px",
+  },
   root: {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-between",
     overflow: "hidden",
     backgroundColor: "#282c34",
+    backgroundImage: (props) => `url(${props.productImage})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    height: "250px",
   },
-  gridList: {
-    flexWrap: "nowrap",
-    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
-    transform: "translateZ(0)",
+  descrpition: {
+    backgroundColor: "rgba(100,100,100,0.3)",
+    height: "min-content",
+    alignSelf: "center",
+    width: "100%",
+    padding: "8px 0",
   },
 }));
 

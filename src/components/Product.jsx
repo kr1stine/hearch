@@ -34,10 +34,10 @@ const Product = ({ product }) => {
 
   return (
     <Grid container direction="row" justify="center" alignItems="center">
-      <Grid item xs={3}>
+      <Grid item xs={4}>
         <ProductDescription product={product}></ProductDescription>
       </Grid>
-      <Grid item xs={9}>
+      <Grid item xs={8}>
         <VideoList videos={product.videos}></VideoList>
       </Grid>
     </Grid>

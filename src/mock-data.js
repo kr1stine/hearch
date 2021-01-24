@@ -6,7 +6,7 @@ export const mockProduct = {
   amazon_link:
     "https://www.amazon.com/Rare-Beauty-Always-Optimist-Illuminating/dp/B08KFLC42S",
   amazon_img:
-    "https://images-na.ssl-images-amazon.com/images/I/11qIbZXdcWL.jpg",
+    "https://cdn.shopify.com/s/files/1/0314/1143/7703/products/ILLUMINATING-PRIMER-28ML-SKU-1_6ffb264a-d678-4a6d-85a8-fa2924d6fd0f.jpg?v=1598639225",
   videos: [
     {
       id: "B6edjW4ewYo",
