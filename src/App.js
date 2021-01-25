@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { getSubtitles } from "youtube-captions-scraper";
+import React from "react";
 
 import Box from "@material-ui/core/Box";
 import Product from "./components/Product";
@@ -8,29 +7,24 @@ import HeaderSection from "components/HeaderSection";
 
 import { mockProduct } from "./mock-data";
 
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import "./App.css";
+import {
+  createMuiTheme,
+  ThemeProvider,
+  makeStyles,
+} from "@material-ui/core/styles";
 
 function App() {
-  const [captions, setCaptions] = useState([]);
-
-  useEffect(() => {
-    getSubtitles({
-      videoID: "B6edjW4ewYo", // youtube video id
-      lang: "en", // default: `en`
-    }).then((resp) => {
-      console.log(resp);
-      setCaptions(resp);
-    });
-  }, []);
+  const classes = useStyles(theme);
 
   return (
     <ThemeProvider theme={theme}>
       <Box>
         <NavigationBar></NavigationBar>
-        <div className="App">
-          <HeaderSection></HeaderSection>
-          <Product product={mockProduct}></Product>
+        <div className={classes.app}>
+          <div className={classes.content}>
+            <HeaderSection></HeaderSection>
+            <Product product={mockProduct}></Product>
+          </div>
         </div>
       </Box>
     </ThemeProvider>
@@ -38,6 +32,24 @@ function App() {
 }
 
 export default App;
+
+const useStyles = makeStyles((theme) => ({
+  app: {
+    textAlign: "center",
+    backgroundColor: "#f4f4ed",
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "calc(10px + 2vmin)",
+    color: "rgba(0,0,0,0.87)",
+  },
+  content: {
+    padding: "0 16px",
+    minHeight: "100vh",
+  },
+}));
 
 const theme = createMuiTheme({
   palette: {

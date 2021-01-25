@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     height: "250px",
   },
   descrpition: {
-    backgroundColor: "rgba(100,100,100,0.3)",
+    backgroundColor: "rgba(255,255,255,0.8)",
     height: "min-content",
     alignSelf: "center",
     width: "100%",
